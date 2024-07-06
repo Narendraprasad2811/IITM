@@ -6,11 +6,6 @@ body {
     overflow: auto;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
 #contact-info {
     position: fixed;
     bottom: -100%; /* Initially position the footer outside the viewport */
@@ -120,7 +115,7 @@ footer {
 .slide {
     display: none;
     max-width: 100%;
-    height:800;
+    height:300;
 }
 
 
@@ -131,7 +126,7 @@ footer {
 }
 
 h2 {
-    text-align: center;
+    text-align: L;
 }
 
 form {
