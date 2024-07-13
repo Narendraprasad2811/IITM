@@ -1,21 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("container");
-    const addButton = document.getElementById("addButton");
-    const removeButton = document.getElementById("removeButton");
-    let itemCount = 0;
+        // Get references to the buttons and the container
+        const addButton = document.getElementById('addButton');
+        const removeButton = document.getElementById('removeButton');
+        const container = document.getElementById('container');
 
-    addButton.addEventListener("click", function () {
-        itemCount++;
-        const newItem = document.createElement("p");
-        newItem.textContent = 'Narendra #${itemCount}';
-        container.appendChild(newItem);
-    });
+        // Initialize a counter for item numbers
+        let itemCount = 0;
 
-    removeButton.addEventListener("click", function () {
-        const items = container.getElementsByTagName("p");
-        if (items.length > 0) {
-            container.removeChild(items[items.length - 1]);
-            itemCount--;
-        }
-    });
-});
+        // Event listener for the "Add Item" button
+        addButton.addEventListener('click', () => {
+            itemCount++;
+            const newItem = document.createElement('p');
+            newItem.textContent = `Item #${itemCount}`;
+            container.appendChild(newItem);
+        });
+
+        // Event listener for the "Remove Last Item" button
+        removeButton.addEventListener('click', () => {
+            const lastItem = container.lastChild;
+            if (lastItem) {
+                container.removeChild(lastItem);
+                itemCount--;
+            }
+        });
