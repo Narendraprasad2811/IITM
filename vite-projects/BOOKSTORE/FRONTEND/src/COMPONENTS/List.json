@@ -1,0 +1,58 @@
+[
+    {
+        "id":1,
+        "name":"Story Book",
+        "title":"Gulliver's travels",
+        "Author":"Jonathan Swift",
+        "price":0,
+        "category":"Free",
+        "image":"https://coverart.oclc.org/ImageWebSvc/oclc/+-+43001597_140.jpg?allowDefault=false&client=WorldcatOrgUI"
+    },
+    {
+        "id":2,
+        "name":"Story Book",
+        "title":"Don Quixote",
+        "Author":"Miguel de Cervantes",
+        "price":1619,
+        "category":"Adventure",
+        "image":"https://coverart.oclc.org/ImageWebSvc/oclc/+-+3584215756_140.jpg?allowDefault=false&client=WorldcatOrgUI"
+    },
+    {
+        "id":3,
+        "name":"Story Book",
+        "title":"Alice's Adventures in Wonderland",
+        "Author":"Lewis Carroll",
+        "price":2093,
+        "category":"Fairy-tale",
+        "image":"https://coverart.oclc.org/ImageWebSvc/oclc/+-+9826578756_140.jpg?allowDefault=false&client=WorldcatOrgUI"
+    },
+    {
+        "id":4,
+        "name":"Story Book",
+        "title":"The Adventures of Huckleberry Finn",
+        "Author":"Mark Twain",
+        "price":0,
+        "category":"Free",
+        "image":"https://coverart.oclc.org/ImageWebSvc/oclc/+-+16374219_140.jpg?allowDefault=false&client=WorldcatOrgUI"
+    },
+    {
+        "id":5,
+        "name":"Story Book",
+        "title":"The Adventures of Tom Sawyer",
+        "Author":"Mark Twain",
+        "price":0,
+        "category":"Free",
+        "image":"https://coverart.oclc.org/ImageWebSvc/oclc/+-+04429400_140.jpg?allowDefault=false&client=WorldcatOrgUI"
+    },
+    {
+        "id":6,
+        "name":"Story Book",
+        "title":"Treasure Island",
+        "Author":"Robert Louis Stevenson",
+        "price":0,
+        "category":"Free",
+        "image":"https://coverart.oclc.org/ImageWebSvc/oclc/+-+0256002_140.jpg?allowDefault=false&client=WorldcatOrgUI"
+    }
+
+
+]

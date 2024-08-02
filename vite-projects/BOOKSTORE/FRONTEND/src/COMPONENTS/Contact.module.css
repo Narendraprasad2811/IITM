@@ -1,0 +1,83 @@
+.body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5; /* Light background color for the entire page */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full height on all devices */
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width for larger screens */
+    margin: 50px auto; /* Center alignment */
+    padding: 30px; /* Increased padding */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff; /* White background for the form */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
+  }
+  
+  .formGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Increased margin between form elements */
+  }
+  
+  .label {
+    margin-right: 10px; /* Space between label and input */
+    font-weight: bold;
+    color: #333; /* Darker color for better readability */
+    width: 80px; /* Fixed width for labels */
+  }
+  
+  .input, .textarea {
+    flex: 1;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em; /* Increased font size */
+  }
+  
+  .input:focus, .textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Added shadow on focus */
+  }
+  
+  .button {
+    padding: 10px 15px; /* Reduced padding for smaller button */
+    background-color: #007BFF;
+    color: white;
+    border: 2px solid #0056b3; /* Added border */
+    border-radius: 25px; /* More rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 150px; /* Adjusted width */
+    margin: 20px auto; /* Centered button with margin */
+    font-size: 1em; /* Adjusted font size */
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .button:active {
+    background-color: #004494;
+  }
+  
+  .header {
+    text-align: center;
+    margin: 100px auto 20px; /* Added 100px margin above the header */
+    font-size: 2.5em; /* Increased font size */
+    font-weight: bold; /* Made text bold */
+    font-family: 'Arial', sans-serif; /* Changed font style */
+    color: #007BFF; /* Added color to the header */
+  }
+  
