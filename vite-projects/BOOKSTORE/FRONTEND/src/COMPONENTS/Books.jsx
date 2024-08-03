@@ -1,6 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import Cards from "./Cards";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Books() {
+  const [book, setBook] = useState([]);
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const res = await axios.get("http://localhost:4001/book");
+        console.log(res.data);
+        setBook(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBook();
+  }, []);
+
   return (
     <>
     <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
@@ -14,6 +31,12 @@ function Books() {
            Whether you’re a fan of thrilling mysteries, heartwarming romances, or insightful non-fiction, our carefully curated collection has something for everyone.
            Join our community of book lovers today and let your next great read find you!
           </p>
+        </div>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
+          {book.map((item) => (
+            <Cards key={item.id} item={item} />
+          ))}
+
         </div>
 
     </div>

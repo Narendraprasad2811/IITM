@@ -1,16 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Login from "./Login";
-import { useForm } from "react-hook-form"
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 function Signup() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+      .post("http://localhost:4001/user/signup", userInfo,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success("Signup Successfully");
+          navigate(from, {replace: true})
+
+          setTimeout(() => {
+            window.location.reload();
+            localStorage.setItem("Users", JSON.stringify(res.data.user));
+          }, 1000);
+      }
+
+    })
+    .catch((err) => {
+      if (err.response) {
+        console.log(err);
+        toast.error("Error: " + err.response.data.message);
+        setTimeout(() => {}, 2000)
+      }
+    });
+  };
   return (
     <>
     <div className="flex h-screen items-center justify-center">
@@ -33,10 +71,10 @@ function Signup() {
                 type="text"
                 placeholder="Enter your fullname"
                 className="w-80 px-3 py-1 border rounded-md outline-none"
-                {...register("Name", { required: true })}
+                {...register("fullname", { required: true })}
               />
               <br />
-                  {errors.Name && <span className="text-sm text-red-500">This field is required</span>}
+                  {errors.fullname && <span className="text-sm text-red-500">This field is required</span>}
               <br />
               
             </div>
@@ -48,10 +86,10 @@ function Signup() {
                 type="email"
                 placeholder="Enter your email"
                 className="w-80 px-3 py-1 border rounded-md outline-none"
-                {...register("Email", { required: true })}
+                {...register("email", { required: true })}
               />
               <br />
-              {errors.Email && <span className="text-sm text-red-500">This field is required</span>}
+              {errors.email && <span className="text-sm text-red-500">This field is required</span>}
               <br />
               
             </div>
@@ -63,10 +101,10 @@ function Signup() {
                 type="text"
                 placeholder="Enter your password"
                 className="w-80 px-3 py-1 border rounded-md outline-none"
-                {...register("Password", { required: true })}
+                {...register("password", { required: true })}
               />
               <br />
-                  {errors.Password && <span className="text-sm text-red-500">This field is required</span>}
+                  {errors.password && <span className="text-sm text-red-500">This field is required</span>}
               <br />
               
             </div>
@@ -75,18 +113,6 @@ function Signup() {
               <button className="bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200">
                 Signup
               </button>
-              <p className="text-xl">
-                Have account?{" "}
-                <button
-                  className="underline text-blue-500 cursor-pointer"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
-                >
-                  Login
-                </button>{" "}
-                <Login />
-              </p>
             </div>
           </form>
         </div>
