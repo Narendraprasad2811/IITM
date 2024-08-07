@@ -1,0 +1,65 @@
+.card {
+  width: 10rem; /* Smaller width */
+  height: 16rem; /* Smaller height */
+  background-color: rgb(129, 211, 255); 
+  box-shadow: var(--shadow-xl);
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem; /* Add margin to prevent overlapping */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.figure {
+  height: 6rem; /* Adjust height as needed */
+  width: 100%;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-top-left-radius: 10px; /* Rounded corners for image */
+  border-top-right-radius: 10px; /* Rounded corners for image */
+}
+
+.cardBody {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: column; /* Stack title and badge vertically */
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word; /* Allow long titles to wrap */
+}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buyNow {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem; /* Smaller padding */
+  border-radius: 9999px;
+  border: 2px solid;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 0.75rem; /* Smaller font size */
+}
+
+.buyNow:hover {
+  background-color: #ec4899 !important; /* Ensure hover color is applied */
+  color: #ffffff !important; /* Ensure hover text color is applied */
+}

@@ -8,6 +8,7 @@ function Allbooks() {
   return (
     <>
     <Navbar/>
+    <br/>
     <div className='min-h-screen'>
     <Books/>
     </div>

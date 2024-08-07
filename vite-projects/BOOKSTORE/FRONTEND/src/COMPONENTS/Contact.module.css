@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     width: 90%; /* Responsive width */
-    max-width: 400px; /* Max width for larger screens */
+    max-width: 600px; /* Max width for larger screens */
     margin: 50px auto; /* Center alignment */
     padding: 30px; /* Increased padding */
     border: 2px solid #ccc;
@@ -79,5 +79,22 @@
     font-weight: bold; /* Made text bold */
     font-family: 'Arial', sans-serif; /* Changed font style */
     color: #007BFF; /* Added color to the header */
+  }
+  
+  @media (min-width: 768px) {
+    .formGroup {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .label {
+      width: 100px; /* Fixed width for labels */
+      margin-bottom: 0; /* Remove bottom margin for labels */
+      margin-right: 10px; /* Space between label and input */
+    }
+  
+    .textarea {
+      width: calc(100% - 110px); /* Adjust width for textarea */
+    }
   }
   

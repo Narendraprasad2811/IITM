@@ -32,7 +32,7 @@ function Books() {
            Join our community of book lovers today and let your next great read find you!
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-5 bg-gradient-to-r from-blue-100 to-blue-300 p-8 rounded-lg shadow-lg">
           {book.map((item) => (
             <Cards key={item.id} item={item} />
           ))}

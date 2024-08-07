@@ -1,15 +1,25 @@
 import React, { createContext, useContext, useState } from "react";
 
 export const AuthContext = createContext();
+
 export default function AuthProvider({ children }) {
   const initialAuthUser = localStorage.getItem("Users");
-  const [authUser, setAuthUser] = useState(
-    initialAuthUser ? JSON.parse(initialAuthUser) : undefined
-  );
+  let parsedAuthUser;
+
+  try {
+    parsedAuthUser = initialAuthUser ? JSON.parse(initialAuthUser) : null;
+  } catch (error) {
+    console.error("Failed to parse JSON:", error);
+    parsedAuthUser = null;
+  }
+
+  const [authUser, setAuthUser] = useState(parsedAuthUser);
+
   return (
     <AuthContext.Provider value={[authUser, setAuthUser]}>
       {children}
     </AuthContext.Provider>
   );
 }
+
 export const useAuth = () => useContext(AuthContext);

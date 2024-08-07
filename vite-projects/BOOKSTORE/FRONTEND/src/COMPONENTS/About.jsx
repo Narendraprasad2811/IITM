@@ -7,9 +7,10 @@ function About() {
   return (
     <>
     <Navbar/>
+    <br/>
     <div className='min-h-screen'>
     <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
-         <div className="mt-28 items-center justify-center text-center">
+         <div className="mt-28 items-center justify-center text-center bg-gradient-to-r from-blue-100 to-blue-300 p-8 rounded-lg shadow-lg">
           <div className={styles.body}>
         <div className={styles.container}>
           <img src="https://img.freepik.com/premium-vector/vector-design-bible-icon-style_1134108-171269.jpg?w=826" alt="Book Store" className={styles.image} />
